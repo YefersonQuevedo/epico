@@ -52,6 +52,23 @@ Producción: `npm start` compila el frontend y lo sirve desde el mismo servidor 
 - Si prefieres Wompi o Mercado Pago (muy usados en Colombia), la integración va en `server/index.js` (`/api/payments/intent` y la verificación en `/api/orders`).
 - El buscador de lugares usa Nominatim (OpenStreetMap), que tiene límites de uso; para mucho tráfico usa un proveedor propio.
 
+## Tráiler (promo de 30 s)
+
+El video de `public/promo/epico-promo.mp4` se genera desde código, sin plantillas ni música de terceros:
+
+- `promo/Promo.tsx`: composición animada a 1920×1080 que usa las mismas ilustraciones del sitio (héroe, panteón, signos) y capturas reales del producto (`promo/assets/`). Cada cuadro es una función pura del tiempo.
+- `promo/music.py`: banda sonora original sintetizada (120 BPM, Re menor) con los golpes sincronizados al guion.
+- `promo/render.mjs`: renderiza 900 cuadros con Playwright y los codifica con ffmpeg (H.264 + AAC).
+
+```bash
+pip install numpy scipy imageio-ffmpeg
+npm run promo:music
+npm run dev:web            # en otra terminal
+npm run promo:render       # → promo/out/epico-promo.mp4
+```
+
+Vista previa en vivo: abre `http://localhost:5173/promo/index.html` y haz clic para sonar la música.
+
 ## Estructura
 
 ```

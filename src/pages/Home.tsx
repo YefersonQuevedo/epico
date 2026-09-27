@@ -170,6 +170,27 @@ function Watch() {
   )
 }
 
+function Trailer() {
+  return (
+    <section className="mx-auto max-w-6xl px-4 pt-24 sm:px-6">
+      <SectionTitle kicker="dale play" title="El tráiler de Épico" align="center">
+        30 segundos de dioses, musicales y comunidad. Sube el volumen.
+      </SectionTitle>
+      <div className="wobble-2 overflow-hidden bg-ink" style={{ boxShadow: `10px 10px 0 ${C.cloud}` }}>
+        <video
+          className="aspect-video w-full"
+          src="/promo/epico-promo.mp4"
+          poster="/promo/poster.jpg"
+          controls
+          playsInline
+          preload="none"
+          aria-label="Tráiler de Épico: la casa de los fans de los musicales"
+        />
+      </div>
+    </section>
+  )
+}
+
 function CommunitiesPreview() {
   const { data } = useCommunities({ parent: 'root' })
   return (
@@ -234,6 +255,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <Pantheon />
+      <Trailer />
       <MusicalsGrid />
       <Meander className="opacity-40" />
       <Upcoming />
