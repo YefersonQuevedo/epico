@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { toast } from 'sonner'
 import { Crown, Plus, Trash2, UsersRound } from 'lucide-react'
-import { Bird } from '../art/Art'
+import { GodFrame } from '../art/Gods'
 import { api, useCommunity, useInvalidate } from '../lib/api'
 import { discordLink, instagramLink, mustAccept, nul, optionalEmail, optionalPhone, telegramLink, whatsappLink } from '../lib/forms'
 import { MUSICALS } from '../lib/musicals'
@@ -84,7 +84,7 @@ export default function CommunityNew() {
       <PageHeader
         kicker={isSub ? `subcomunidad de ${parent.name}` : 'reúne a tu gente'}
         title={isSub ? 'Nueva subcomunidad' : 'Crea tu comunidad'}
-        art={<Bird className="float w-56" />}
+        art={<GodFrame id="persephone" className="-rotate-2" />}
       >
         {isSub
           ? 'Divide por zona, coro, universidad o interés. La subcomunidad tendrá sus propios líderes y chats, y los líderes principales también podrán administrarla.'

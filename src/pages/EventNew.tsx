@@ -5,7 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { toast } from 'sonner'
 import { Feather, Sparkles } from 'lucide-react'
-import { Sun } from '../art/Art'
+import { GodFrame } from '../art/Gods'
 import { api, useCommunities, useInvalidate } from '../lib/api'
 import { discordLink, mustAccept, nul, optionalPhone, whatsappLink } from '../lib/forms'
 import { money } from '../lib/format'
@@ -99,7 +99,7 @@ export default function EventNew() {
 
   return (
     <>
-      <PageHeader kicker="para organizadores" title="Organiza un evento" art={<Sun className="w-40" />}>
+      <PageHeader kicker="para organizadores" title="Organiza un evento" art={<GodFrame id="athena" className="rotate-2" />}>
         Publica tu sing-along, watch party o función en cualquier ciudad. Marca el lugar en el mapa, define cupos y precio, y enlaza el grupo de tu gente.
       </PageHeader>
 

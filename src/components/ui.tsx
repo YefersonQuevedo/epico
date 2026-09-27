@@ -5,6 +5,7 @@ import { CalendarDays, MapPin, MessageCircle, Send, Users } from 'lucide-react'
 import clsx from 'clsx'
 import { toast } from 'sonner'
 import { MusicalIcon } from '../art/Art'
+import { Sign } from '../art/Gods'
 import { dayNum, fmtDate, money, monthShort } from '../lib/format'
 import { musicalById } from '../lib/musicals'
 import { useStore } from '../lib/store'
@@ -15,7 +16,9 @@ export const FEE_RATE = 0.05
 export function SectionTitle({ kicker, title, children, align = 'left' }: { kicker: string; title: ReactNode; children?: ReactNode; align?: 'left' | 'center' }) {
   return (
     <div className={clsx('mb-10', align === 'center' && 'mx-auto max-w-2xl text-center')}>
-      <p className="kicker">{kicker}</p>
+      <p className={clsx('kicker flex items-center gap-2', align === 'center' && 'justify-center')}>
+        <Sign id="laurel" className="size-6 text-feather" /> {kicker}
+      </p>
       <h2 className="h-display mt-1 text-4xl text-ultra sm:text-5xl">{title}</h2>
       {children && <p className="mt-4 text-lg text-ink/70">{children}</p>}
     </div>

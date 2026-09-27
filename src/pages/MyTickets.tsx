@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { toast } from 'sonner'
 import { Search } from 'lucide-react'
-import { Bird } from '../art/Art'
+import { GodFrame } from '../art/Gods'
 import { useTicketLookup } from '../lib/api'
 import { useStore } from '../lib/store'
 import { Empty, PageHeader } from '../components/ui'
@@ -30,7 +30,7 @@ export default function MyTickets() {
 
   return (
     <>
-      <PageHeader kicker="tu pase de abordar" title="Mis boletas" art={<Bird className="float w-52" />}>
+      <PageHeader kicker="tu pase de abordar" title="Mis boletas" art={<GodFrame id="poseidon" className="rotate-2" />}>
         Presenta el código QR en la entrada. Si compraste en otro dispositivo, recupera tus boletas con tu correo y número de orden.
       </PageHeader>
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">

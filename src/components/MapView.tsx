@@ -1,3 +1,4 @@
+import 'leaflet/dist/leaflet.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import L from 'leaflet'

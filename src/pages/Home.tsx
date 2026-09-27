@@ -6,12 +6,17 @@ import { Bird, C, Cloud, HeroArt, Meander, MusicalIcon, Sun } from '../art/Art'
 import { useCommunities, useEvents, useStats } from '../lib/api'
 import { MUSICALS } from '../lib/musicals'
 import { CommunityCard, EventCard, SectionTitle } from '../components/ui'
+import Pantheon from '../components/Pantheon'
+import { SIGNS, Sign } from '../art/Gods'
 
 function Hero() {
   const { data: s } = useStats()
   return (
     <section className="relative overflow-hidden">
       <Cloud className="pointer-events-none absolute -left-40 -top-6 w-80 opacity-40" />
+      <Sign id="bolt" className="pointer-events-none absolute left-[46%] top-16 hidden size-12 rotate-12 text-feather lg:block" />
+      <Sign id="eye" className="pointer-events-none absolute bottom-24 left-[44%] hidden size-14 text-cloud-deep lg:block" />
+      <Sign id="laurel" className="pointer-events-none absolute right-6 top-8 hidden size-16 text-feather/70 lg:block" />
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 pb-10 pt-10 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:pt-16">
         <motion.div className="relative z-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <p className="kicker">fans · comunidades · boletas</p>
@@ -62,7 +67,7 @@ function Marquee() {
         {[...names, ...names].map((n, i) => (
           <span key={i} className="flex items-center gap-10 font-display text-2xl font-bold tracking-widest">
             {n}
-            <Bird className="h-9 w-14" flip={i % 2 === 0} />
+            <Sign id={SIGNS[i % SIGNS.length]} className="size-8 text-feather" />
           </span>
         ))}
       </div>
@@ -228,6 +233,7 @@ export default function Home() {
     <>
       <Hero />
       <Marquee />
+      <Pantheon />
       <MusicalsGrid />
       <Meander className="opacity-40" />
       <Upcoming />

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { ShieldCheck, Scale } from 'lucide-react'
+import { GodFrame } from '../art/Gods'
 import { LEGAL as L } from '../lib/legal'
 import { PageHeader } from '../components/ui'
 
@@ -30,7 +30,7 @@ export function Terms() {
   ]
   return (
     <>
-      <PageHeader kicker="legal" title="Términos y condiciones" art={<Scale className="size-28 text-ultra" />}>
+      <PageHeader kicker="legal" title="Términos y condiciones" art={<GodFrame id="athena" className="rotate-2" />}>
         Última actualización: {L.updated}. Léelos con calma: al usar {L.brand} aceptas estas reglas.
       </PageHeader>
       <Doc toc={toc}>
@@ -159,7 +159,7 @@ export function Privacy() {
   ]
   return (
     <>
-      <PageHeader kicker="habeas data" title="Política de tratamiento de datos personales" art={<ShieldCheck className="size-28 text-ultra" />}>
+      <PageHeader kicker="habeas data" title="Política de tratamiento de datos personales" art={<GodFrame id="hades" className="-rotate-2" />}>
         Última actualización: {L.updated}. Así cuidamos la información de fans, líderes y organizadores.
       </PageHeader>
       <Doc toc={toc}>

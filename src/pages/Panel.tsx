@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { toast } from 'sonner'
 import { KeyRound, LogOut, Plus } from 'lucide-react'
-import { Sun } from '../art/Art'
+import { GodFrame } from '../art/Gods'
 import { api, useCommunities } from '../lib/api'
 import { useStore } from '../lib/store'
 import { CommunityCard, Field, PageHeader } from '../components/ui'
@@ -37,7 +37,7 @@ export default function Panel() {
 
   return (
     <>
-      <PageHeader kicker="para líderes" title="Panel de líderes" art={<Sun className="w-40" />}>
+      <PageHeader kicker="para líderes" title="Panel de líderes" art={<GodFrame id="hades" className="-rotate-2" />}>
         Administra tus comunidades: miembros y sus números, líderes, enlaces a WhatsApp y Discord, subcomunidades y eventos.
       </PageHeader>
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_2fr]">

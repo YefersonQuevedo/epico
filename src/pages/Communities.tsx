@@ -1,6 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom'
 import { Plus, Search } from 'lucide-react'
-import { Cloud } from '../art/Art'
+import { GodFrame } from '../art/Gods'
 import { useCities, useCommunities } from '../lib/api'
 import { MUSICALS } from '../lib/musicals'
 import { CommunityCard, Empty, Loading, PageHeader } from '../components/ui'
@@ -19,7 +19,7 @@ export default function Communities() {
 
   return (
     <>
-      <PageHeader kicker="encuentra a tu gente" title="Comunidades" art={<Cloud className="w-72" />}>
+      <PageHeader kicker="encuentra a tu gente" title="Comunidades" art={<GodFrame id="zeus" className="-rotate-2" />}>
         Grupos de fans por musical y ciudad, con subcomunidades, líderes y enlaces a sus chats de WhatsApp, Discord y Telegram.
       </PageHeader>
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">

@@ -1,7 +1,7 @@
 import { useSearchParams, Link } from 'react-router-dom'
 import { LayoutGrid, Map, Plus, Search } from 'lucide-react'
 import clsx from 'clsx'
-import { Bird } from '../art/Art'
+import { GodFrame } from '../art/Gods'
 import { useCities, useEvents } from '../lib/api'
 import { MUSICALS } from '../lib/musicals'
 import { EVENT_TYPES } from '../lib/types'
@@ -28,7 +28,7 @@ export default function Events() {
 
   return (
     <>
-      <PageHeader kicker="elige tu próxima noche" title="Eventos" art={<Bird className="float w-56" />}>
+      <PageHeader kicker="elige tu próxima noche" title="Eventos" art={<GodFrame id="hermes" className="rotate-2" />}>
         Sing-alongs, watch parties, cosplay y funciones en todas las ciudades. Filtra por musical, ciudad o tipo de plan.
       </PageHeader>
 

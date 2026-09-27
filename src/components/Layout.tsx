@@ -5,6 +5,7 @@ import { Menu, ShoppingBag, Ticket, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import clsx from 'clsx'
 import { ArtDefs, Bird, Meander } from '../art/Art'
+import { SIGNS, Sign } from '../art/Gods'
 import { cartCount, useStore } from '../lib/store'
 import CartDrawer from './CartDrawer'
 
@@ -127,6 +128,9 @@ function Footer() {
             <li><Link className="hover:text-cloud" to="/privacidad#derechos">Ejercer tus derechos (habeas data)</Link></li>
           </ul>
         </div>
+      </div>
+      <div className="flex flex-wrap justify-center gap-6 pb-8 text-feather/60">
+        {SIGNS.map((id) => <Sign key={id} id={id} className="size-7" />)}
       </div>
       <div className="border-t border-paper/15 py-5 text-center text-xs text-paper/60">© {new Date().getFullYear()} Épico · Hecho con plumas, nubes y muchas ganas de cantar.</div>
     </footer>
