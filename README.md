@@ -68,6 +68,7 @@ npm run promo:render       # → promo/out/epico-promo.mp4
 ```
 
 Vista previa en vivo: abre `http://localhost:5173/promo/index.html` y haz clic para sonar la música.
+Hoja de revisión del panteón (los seis retratos en grande con sus atributos): `http://localhost:5173/promo/gods.html`.
 
 ## Estructura
 

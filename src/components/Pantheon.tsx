@@ -33,10 +33,19 @@ export default function Pantheon() {
             style={{ clipPath: SLANT }}
           >
             <GodPortrait id={g.id} className="absolute inset-0 size-full transition duration-700 group-hover:scale-105" />
-            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/50 to-transparent px-[20%] pb-6 pt-16">
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/95 via-ink/60 to-transparent px-[20%] pb-6 pt-20">
               <span className="block h-display text-2xl text-paper lg:text-3xl">{g.name}</span>
-              <span className="block text-xs font-bold uppercase tracking-widest text-feather">{g.title}</span>
-              <span className="mt-1 block max-h-0 overflow-hidden text-sm text-paper/80 transition-all duration-500 group-hover:max-h-10">{g.saga}</span>
+              <span className="block font-display text-sm text-paper/60" lang="grc">{g.greek}</span>
+              <span className="mt-1 block text-xs font-bold uppercase tracking-widest text-feather">{g.title}</span>
+              <span className="block max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-40 group-hover:opacity-100">
+                <span className="mt-2 block text-sm text-paper/85">{g.domain}</span>
+                <span className="mt-2 flex flex-wrap gap-1">
+                  {g.attributes.map((a) => (
+                    <span key={a} className="rounded-full bg-paper/15 px-2 py-0.5 text-[11px] font-bold text-paper">{a}</span>
+                  ))}
+                </span>
+                <span className="mt-2 block text-xs font-bold text-cloud">{g.saga}</span>
+              </span>
             </figcaption>
           </motion.figure>
         ))}
@@ -45,11 +54,12 @@ export default function Pantheon() {
       {/* móvil: carrusel */}
       <div className="mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 md:hidden">
         {GODS.map((g) => (
-          <figure key={g.id} className="wobble-2 relative h-80 w-56 shrink-0 snap-center overflow-hidden">
+          <figure key={g.id} className="wobble-2 relative h-96 w-64 shrink-0 snap-center overflow-hidden">
             <GodPortrait id={g.id} className="absolute inset-0 size-full" />
-            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 to-transparent p-4 pt-12">
-              <span className="block h-display text-2xl">{g.name}</span>
-              <span className="text-xs font-bold uppercase tracking-widest text-feather">{g.saga}</span>
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/95 to-transparent p-4 pt-16">
+              <span className="block h-display text-2xl">{g.name} <span className="font-display text-base font-normal text-paper/60" lang="grc">{g.greek}</span></span>
+              <span className="block text-xs font-bold uppercase tracking-widest text-feather">{g.title}</span>
+              <span className="mt-1 block text-[11px] text-paper/80">{g.attributes.join(' · ')}</span>
             </figcaption>
           </figure>
         ))}
